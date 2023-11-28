@@ -17,3 +17,7 @@ TODO:
 2.- Pasar "root element" a router.
 3.- Invocar el router para renderizar la vista correcta.
 */
+
+/*import {Chat} from './views/Chat.js';
+import {Error} from './views/Error.js';
+import {home} from './views/home.js';*/
