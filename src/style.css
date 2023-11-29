@@ -1,20 +1,138 @@
-html{
-box-sizing: border-box;
-font-family: sans-serif;
-font-size: 16px;
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
 }
-
-h1{
+header {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    /* Agregar margen en la parte inferior del header */
+  }
+h1 {
     text-align: center;
+    margin: 0;
+    font-weight: 700;
 }
 
-img{ 
-max-width: 100%; 
-height:auto;
-}
+.statistics-container {
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: rgba(133, 134, 199, 0.778);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+  
+  /* Estilo para el párrafo dentro del contenedor */
+  .statistics-container p {
+    font-size: 18px;
+    text-align: left;
+  }
+  
+  .contenedor {
+    background-color: rgba(248, 240, 240, 0.614);
+    padding: 10px 20px;
+    /* Espacio alrededor del contenido */
+    border-radius: 15px;
+    display: flex;
+    /* Para que el contenedor se ajuste al contenido */
+    margin-bottom: 20px;
+  }
+  
+  label[for="type-select"],
+  label[for="temporality-select"],
+  label[for="sort-select"] {
+    margin-right: 10px;
+    margin-left: 10px;
+    color: rgb(42, 28, 28);
+    font-weight: 500;
+  }
+  
+  #button-clear {
+    margin-right: 10px;
+    background-color: rgba(90, 6, 6, 0.27);
+    font-weight: bold;
+  }
+  
+  body {
+    background-image: url("https://img.freepik.com/vector-premium/telon-fondo-cortinas-teatro-festivo-concierto-escenario-espectaculo-telon-fondo-entretenimiento_41737-368.jpg?w=740");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: brightness(0.9);
+    /* Ajusta el valor según tus preferencias */
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+  }
+  
+  /* Estilo para la imagen de la película */
+  .card img {
+    width: 300px;
+    /* Establece un ancho fijo para todas las imágenes */
+    height: 400px;
+    /* Mantiene la proporción de aspecto original */
+    border-radius: 10px 10px 0 0;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Estilo para los términos y definiciones en la tarjeta */
+  .card dt {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 5px;
+    color: #0b0808;
+  }
+  
+  .card dd {
+    margin: 5px 0;
+    color: #e8dede;
+    font-weight: 500;
+  }
+  
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li:hover {
+    background-color: rgba(151, 98, 98, 0.5);
+    transition: background-color 0.3s;
+    /* Agrega una transición suave */
+  }
+  
+  li {
+    background: rgba(228, 181, 181, 0.7);
+    /* Fondo transparente */
+    border-radius: 10px;
+    /* Bordes redondeados, ajusta según tus preferencias */
+    padding: 20px;
+    flex: 1;
+    margin-right: 20px;
+  }
 
-footer {
+.footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-  }
+    background-color: rgba(255, 255, 255, 0.597);
+    /* Fondo blanco transparente */
+    padding: 0px;
+    /* Espacio alrededor del footer */
+    border-radius: 5px;
+    /* Bordes redondeados del contenedor */
+    text-align: center;
+    /* Centra el contenido del footer */
+}

@@ -1,3 +1,5 @@
+export const Chat = () => {
+}
 /*const Example = () => {
 
 };
