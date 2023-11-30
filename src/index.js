@@ -17,9 +17,6 @@ const viewContainer = document.getElementById("root");
 setRoutes(routes); //Toma el obejot se lo lleva al router y lo define
 setRootElement(viewContainer);
 
-
-
-
 document.addEventListener('DOMContentLoaded', (event) => { //DOMContentLoaded cuando todo html fue interpretado y ejecutado
     console.log(event.currentTarget.location);
     onURLChange(event.currentTarget.location.pathname)

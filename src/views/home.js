@@ -1,12 +1,19 @@
+import { createHeader } from "../components/header.js"
+//import { renderItems } from "../lib/view.js"
 import { createFooter } from "../components/footer.js";
-//import { renderItems } from "../lib/view.js";
 
 export const home = () => {
-  const template = `
+  // Crear el contenedor principal
+  const homeView = document.createElement('section');
+
+  // Agregar el encabezado al contenedor
+  homeView.appendChild(createHeader());
+  console.log("encabezado aqui");
+
+  // Establecer el contenido HTML después de agregar el encabezado
+  const contentTemplate = `
     <div>
-      <header>
-        <h1>PelisInfo</h1>
-      </header>
+      
       <div class="contenedor">
         <button data-testid="button-clear" id="button-clear">Limpiar filtro</button>
 
@@ -39,10 +46,20 @@ export const home = () => {
       </div>
     </div>
   `;
+  // Establecer el contenido HTML
+  homeView.innerHTML = contentTemplate;
+  console.log("estructura html aqui");
 
-  const homeView = document.createElement('section');
-  homeView.innerHTML = template;
+  // Renderizar y agregar elementos adicionales, si los hay
+  /*const items = renderItems();
+  if (items instanceof Node) {
+    homeView.appendChild(items);
+  }
+  console.log("data");*/
+
+  // Agregar el pie de página al contenedor
   homeView.appendChild(createFooter());
-  //homeView.appendChild(renderItems());
+  console.log("pie de pagina");
+
   return homeView;
 };

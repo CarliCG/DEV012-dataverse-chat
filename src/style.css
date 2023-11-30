@@ -3,16 +3,7 @@ html {
     font-family: sans-serif;
     font-size: 16px;
 }
-header {
-    background-color: white;
-    padding: 10px 20px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    /* Agregar margen en la parte inferior del header */
-  }
+
 h1 {
     text-align: center;
     margin: 0;
@@ -63,15 +54,19 @@ h1 {
   }
   
   body {
-    background-image: url("https://img.freepik.com/vector-premium/telon-fondo-cortinas-teatro-festivo-concierto-escenario-espectaculo-telon-fondo-entretenimiento_41737-368.jpg?w=740");
+    background-image: url("images/tratro.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: center;
+    background-size: cover; 
     filter: brightness(0.9);
     /* Ajusta el valor según tus preferencias */
     font-family: 'Fira Sans', sans-serif;
     font-weight: 400;
+    
   }
+
   
   /* Estilo para la imagen de la película */
   .card img {
@@ -136,3 +131,14 @@ h1 {
     text-align: center;
     /* Centra el contenido del footer */
 }
+
+.img-error {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+  filter: brightness(1.1); 
+  opacity: 0.9;
+  border-radius: 40px;
+}
+ 
