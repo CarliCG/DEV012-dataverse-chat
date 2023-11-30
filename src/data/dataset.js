@@ -1,4 +1,4 @@
-export const data = [
+export default [
     // Categoría: Terror
     {
       "id": "resident-evil-1",

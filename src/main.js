@@ -1,6 +1,6 @@
 import { filterData, sortData, budgetStatics } from './lib/dataFunctions.js';
 import { renderItems } from './lib/view.js';
-import { data } from './data/dataset.js';
+//import { data } from './data/dataset.js';
 export const main = () => {
 const dataList = document.querySelector("#root");
 dataList.appendChild(renderItems(data));

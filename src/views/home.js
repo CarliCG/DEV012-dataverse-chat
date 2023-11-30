@@ -1,6 +1,7 @@
 import { createHeader } from "../components/header.js"
-//import { renderItems } from "../lib/view.js"
+import { renderItems } from "../lib/view.js"
 import { createFooter } from "../components/footer.js";
+import dataset from "../data/dataset.js";
 
 export const home = () => {
   // Crear el contenedor principal
@@ -56,7 +57,8 @@ export const home = () => {
     homeView.appendChild(items);
   }
   console.log("data");*/
-
+homeView.appendChild(renderItems(dataset));
+console.log(dataset)
   // Agregar el pie de página al contenedor
   homeView.appendChild(createFooter());
   console.log("pie de pagina");

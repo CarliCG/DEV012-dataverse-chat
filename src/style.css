@@ -117,28 +117,36 @@ h1 {
     flex: 1;
     margin-right: 20px;
   }
+  .footer-content img {
+    width: 50px; /* Ajusta según sea necesario */
+    height: auto; /* Mantiene la proporción original */
+    margin-right: 10px; /* Espacio entre el logo y el texto */
+  }
 
-.footer {
-    position: absolute;
-    bottom: 0;
+  footer {
+       
     width: 100%;
     background-color: rgba(255, 255, 255, 0.597);
     /* Fondo blanco transparente */
-    padding: 0px;
-    /* Espacio alrededor del footer */
+    padding: 10px; /* Ajusta según sea necesario */
     border-radius: 5px;
     /* Bordes redondeados del contenedor */
     text-align: center;
     /* Centra el contenido del footer */
+    align-self: flex-end;
 }
 
+
+
 .img-error {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   display: block;
   margin: auto;
   filter: brightness(1.1); 
   opacity: 0.9;
   border-radius: 40px;
+ 
+ 
 }
  
