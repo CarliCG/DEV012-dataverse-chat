@@ -6,7 +6,7 @@ export default [
       "type": "Terror",
       "shortDescription": "Película de terror y ciencia ficción basada en el videojuego.",
       "description": "Resident Evil es una película de terror y ciencia ficción dirigida por Paul W.S. Anderson y lanzada en 2002...",
-      "imageUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRreeKTZliPW4bM0t5bQOkDSvkd3qR70NQDnUT1_rfSjI3M_8tX",
+      "imageUrl": "../images/mulan.jpeg",
       "trailerUrl": "https://www.youtube.com/watch?v=aNEMuldkKnA",
       "facts": {
         "releaseDate": "15 de marzo de 2002",

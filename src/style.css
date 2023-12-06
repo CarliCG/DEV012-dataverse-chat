@@ -1,139 +1,193 @@
 html {
-    box-sizing: border-box;
-    font-family: sans-serif;
-    font-size: 16px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+/* Estilos para el encabezado */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
 }
 
 h1 {
-    text-align: center;
-    margin: 0;
-    font-weight: 700;
+  
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+  font-weight: 700;
+  padding-right: 30px;
 }
 
 .statistics-container {
-    border: 1px solid #000;
-    border-radius: 20px;
-    padding: 5px;
-    background-color: rgba(133, 134, 199, 0.778);
-    margin-top: 10px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-  }
-  
-  /* Estilo para el párrafo dentro del contenedor */
-  .statistics-container p {
-    font-size: 18px;
-    text-align: left;
-  }
-  
-  .contenedor {
-    background-color: rgba(248, 240, 240, 0.614);
-    padding: 10px 20px;
-    /* Espacio alrededor del contenido */
-    border-radius: 15px;
-    display: flex;
-    /* Para que el contenedor se ajuste al contenido */
-    margin-bottom: 20px;
-  }
-  
-  label[for="type-select"],
-  label[for="temporality-select"],
-  label[for="sort-select"] {
-    margin-right: 10px;
-    margin-left: 10px;
-    color: rgb(42, 28, 28);
-    font-weight: 500;
-  }
-  
-  #button-clear {
-    margin-right: 10px;
-    background-color: rgba(90, 6, 6, 0.27);
-    font-weight: bold;
-  }
-  
-  body {
-    background-image: url("images/tratro.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover; 
-    filter: brightness(0.9);
-    /* Ajusta el valor según tus preferencias */
-    font-family: 'Fira Sans', sans-serif;
-    font-weight: 400;
-    
-  }
+  display: flex;
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 8px;
+  background-color: rgba(133, 134, 199, 0.778);
+  margin-top: 10px;
+  margin-bottom: 20px;
 
-  
-  /* Estilo para la imagen de la película */
-  .card img {
-    width: 300px;
-    /* Establece un ancho fijo para todas las imágenes */
-    height: 400px;
-    /* Mantiene la proporción de aspecto original */
-    border-radius: 10px 10px 0 0;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  /* Estilo para los términos y definiciones en la tarjeta */
-  .card dt {
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 5px;
-    color: #0b0808;
-  }
-  
-  .card dd {
-    margin: 5px 0;
-    color: #e8dede;
-    font-weight: 500;
-  }
-  
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  ul li:hover {
-    background-color: rgba(151, 98, 98, 0.5);
-    transition: background-color 0.3s;
-    /* Agrega una transición suave */
-  }
-  
-  li {
-    background: rgba(228, 181, 181, 0.7);
-    /* Fondo transparente */
-    border-radius: 10px;
-    /* Bordes redondeados, ajusta según tus preferencias */
-    padding: 20px;
-    flex: 1;
-    margin-right: 20px;
-  }
-  .footer-content img {
-    width: 50px; /* Ajusta según sea necesario */
-    height: auto; /* Mantiene la proporción original */
-    margin-right: 10px; /* Espacio entre el logo y el texto */
-  }
 
-  footer {
-       
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.597);
-    /* Fondo blanco transparente */
-    padding: 10px; /* Ajusta según sea necesario */
-    border-radius: 5px;
-    /* Bordes redondeados del contenedor */
-    text-align: center;
-    /* Centra el contenido del footer */
-    align-self: flex-end;
+}
+
+/* Estilo para el párrafo dentro del contenedor */
+.statistics-container p {
+  font-size: 18px;
+  text-align: left;
+}
+
+.contenedor {
+  background-color: rgba(246, 242, 242, 0.614);
+  padding: 10px 20px;
+  display: flex;
+  /* Ajustar el contenedor al ancho completo */
+  width: 100vw;
+  /* 100% del ancho de la ventana */
+  margin-bottom: 20px;
+  box-shadow: inset 0 4px 8px rgba(141, 85, 85, 0.1);
+  
+}
+
+
+label[for="type-select"],
+label[for="temporality-select"],
+label[for="sort-select"] {
+  margin-right: 10px;
+  margin-left: 10px;
+  color: black;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+#button-clear {
+  margin-right: 10px;
+  background-color: rgba(246, 16, 16, 0.27);
+  font-weight: bold;
+  width: 150px;
+  height: 50px;
+}
+/* Estilo para el contenedor type-select */
+#type-select,
+#temporality-select,
+#sort-select {
+  width: 200px; /* Ajusta el valor según tus preferencias */
+  padding: 10px; /* Añade espacio alrededor del contenedor */
+  font-size: 14px; /* Ajusta el tamaño de la fuente dentro del contenedor */
+}
+
+/* Estilo para los elementos dentro de type-select */
+#type-select option {
+  font-size: 14px; /* Ajusta el tamaño de la fuente de las opciones */
+}
+
+/* Puedes experimentar con estos valores para obtener el tamaño deseado */
+
+body {
+
+  background-color: rgb(235, 226, 226);
+  filter: brightness(0.9);
+  /* Ajusta el valor según tus preferencias */
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+
+}
+
+.card {
+  background-color: rgba(215, 112, 112, 0.451);
+  border: 3px solid black;
+  max-width: 400px; /* Establecer el ancho máximo deseado */
+  width: 100%; /* Hacer que la tarjeta ocupe el ancho completo del contenedor padre */
+  box-sizing: border-box; /* Incluir el borde en el ancho total */
+  
+  /* Agregar media queries para hacer la tarjeta responsive en diferentes tamaños de pantalla */
+  @media (max-width: 767px) {
+    max-width: 100%; /* En pantallas más pequeñas, la tarjeta ocupa el ancho completo */
+  }
+}
+
+/* Estilo para la imagen de la película */
+.card img {
+  width: 300px;
+  /* Establece un ancho fijo para todas las imágenes */
+  height: 400px;
+  /* Mantiene la proporción de aspecto original */
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+
+}
+
+/* Estilo para los términos y definiciones en la tarjeta */
+.card dt {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 5px;
+  color: #120101;
+}
+
+.card dd {
+  margin: 10px 10px;
+  color: #0c0a0a;
+  font-weight: 500;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li:hover {
+  background-color: rgba(116, 98, 151, 0.5);
+  transition: background-color 0.3s;
+  /* Agrega una transición suave */
+}
+
+li {
+  background: white;
+  /* Fondo transparente */
+  border-radius: 10px;
+  /* Bordes redondeados, ajusta según tus preferencias */
+  padding: 20px;
+  flex: 1;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+button {
+  font-size: 18px; /* Tamaño de la letra más grande */
+  cursor: pointer; /* Cambiar el cursor al pasar encima */
+  
+}
+.footer-content img {
+  width: 50px;
+  /* Ajusta según sea necesario */
+  height: auto;
+  /* Mantiene la proporción original */
+  margin-right: 10px;
+  /* Espacio entre el logo y el texto */
+}
+
+footer {
+
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.597);
+  /* Fondo blanco transparente */
+  padding: 10px;
+  /* Ajusta según sea necesario */
+  border-radius: 5px;
+  /* Bordes redondeados del contenedor */
+  text-align: center;
+  /* Centra el contenido del footer */
+  align-self: flex-end;
 }
 
 
@@ -143,10 +197,9 @@ h1 {
   height: auto;
   display: block;
   margin: auto;
-  filter: brightness(1.1); 
+  filter: brightness(1.1);
   opacity: 0.9;
   border-radius: 40px;
- 
- 
+
+
 }
- 

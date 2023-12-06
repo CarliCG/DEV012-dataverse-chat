@@ -17,18 +17,14 @@ export const renderItems = (data) => {
       const itemContainer = document.createElement("dl");
       //Dentro de cada <li>, crea un elemento <dl> llamado itemContainer. El elemento <dl> se utiliza para definir una lista de términos y sus descripciones en HTML.
       
-      itemContainer.innerHTML = ` 
+      itemContainer.innerHTML = `
         <img src=${element.imageUrl} alt=${element.name} />
         <dt>Nombre:</dt><dd itemprop="name">${element.name}</dd>
         <dt>Categoría:</dt><dd itemprop="type">${element.type}</dd>
         <dt>Descripción:</dt><dd itemprop="description">${element.shortDescription}</dd>
         <dt>Fecha de Estreno:</dt><dd itemprop="releaseDate">${element.facts.releaseDate}</dd>
-        <dt>Actores Principales:</dt><dd itemprop="mainActors">${element.facts.mainActors.join(", ")}</dd>
-        <dt>Premios:</dt><dd itemprop="awards">${element.facts.awards.join(", ")}</dd>
-        <dt>Presupuesto:</dt><dd itemprop="budget">${element.facts.budget}</dd>
-        <dt>Calificación de la Crítica:</dt><dd itemprop="criticRating">${element.facts.criticRating}</dd>
-        <dt>Calificación de la Audiencia:</dt><dd itemprop="audienceRating">${element.facts.audienceRating}</dd>
-      `
+        <button onclick="iniciarChat()">Chatea Ahora</button>
+`;
       
       itemContainer.setAttribute("itemscope", ""); 
       //definir un nuevo conjunto de datos estructurados utilizando el atributo "itemscope" en HTML
