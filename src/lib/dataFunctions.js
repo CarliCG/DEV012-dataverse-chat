@@ -1,6 +1,5 @@
 // Estas funciones son ejemplos, aquí puedes desarrollar tus propias funciones. FILTRO ORDENAMIENTO 
 
-
 export const filterData = (data, filterBy, value) => { //Se declara una función que toma tres parámetros 
     function filtrado(data) { //realizar el filtrado basado en el criterio especificado en el parámetro filterBy y el valor en value.
       if (filterBy === "temporality") {

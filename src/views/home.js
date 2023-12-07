@@ -1,33 +1,32 @@
-import { createHeader } from "../components/header.js"
-import { renderItems } from "../lib/view.js"
+import { createHeader } from "../components/header.js";
+import { renderItems } from "../lib/view.js";
 import { createFooter } from "../components/footer.js";
 import dataset from "../data/dataset.js";
-import { main } from "../main.js";
 
 export const home = () => {
   // Crear el contenedor principal
-  const homeView = document.createElement('section');
+  const homeView = document.createElement("section");
 
-  const renderizar= () => {
-    console.log(dataset)
-    }
+  
+  const resultadosWrapper = document.createElement("div");
 
-  // Agregar el encabezado
+  const renderizar = (tipo) => {
+    const filteredData = dataset.filter(
+      (item) => tipo === "" || item.type === tipo
+    );
+    resultadosWrapper.innerHTML = ""; // Limpiar los resultados anteriores
+    resultadosWrapper.appendChild(renderItems(filteredData)); // Mostrar los resultados filtrados
+  };
+
   const header = createHeader(renderizar);
-  const button = header.querySelector("[data-testid='button-clear']");
-  console.log (button)
 
   homeView.appendChild(header);
-  // Agregar la barra superior
-  
-  
-  // Establecer el contenido HTML después de agregar el encabezado
-    
-  homeView.appendChild(renderItems(dataset));
-  
+  homeView.appendChild(resultadosWrapper);
+
   // Agregar el pie de página al contenedor
   homeView.appendChild(createFooter());
-  
+
+  renderizar(""); // Renderizar todos los items al cargar la página
 
   return homeView;
 };

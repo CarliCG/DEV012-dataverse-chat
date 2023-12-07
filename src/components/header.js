@@ -1,5 +1,4 @@
-export const createHeader = (funcionrenderizar) => {
-  console.log(funcionrenderizar)
+export const createHeader = (funcionRenderizar) => {
   const htmlTemplate = `
       
   <header class="header-container">
@@ -41,16 +40,24 @@ export const createHeader = (funcionrenderizar) => {
 
     `;
 
-  // Crea un elemento div para el encabezado
   const header = document.createElement('header');
   header.classList.add('encabezado');
   header.innerHTML = htmlTemplate;
-  const button = header.querySelector("[data-testid='button-clear']");
-  button.addEventListener("click", function (){
-    console.log ("header");
-    funcionrenderizar();
-  }
-  )
 
+  const button = header.querySelector("[data-testid='button-clear']");
+  button.addEventListener("click", function () {
+
+    funcionRenderizar();
+  });
+  
+  const selectType = header.querySelector("[data-testid='filter-type']");
+selectType.addEventListener("change", function () {
+  funcionRenderizar(selectType.value, selectTemporality.value);
+});
+
+const selectTemporality = header.querySelector("[data-testid='filter-temporality']");
+selectTemporality.addEventListener("change", function () {
+  funcionRenderizar(selectType.value, selectTemporality.value);
+});
   return header;
 };
