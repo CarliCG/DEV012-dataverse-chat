@@ -1,24 +1,28 @@
 export const ChatView = () => {
-    const itemChat = document.createElement("section")
-    itemChat.innerHTML = `
+  const itemChat = document.createElement("section")
+  itemChat.innerHTML = `
     
     <div id="personajes">
-    <h3>Pelicula</h3>
-    </div>
+    <h3>Chatea con: </h3>
+</div>
 
-  <div id="chatIn">
+<div id="chatIn">
     <div id="chatIn-container">
-      <div id="messages">
-      </div>
+        <div id="messages"></div>
         <form id="message-form">
-          <input type="text" id="message-input" placeholder="Escribe tu pregunta aqui..."/>
-          <button type="submit" class="button-send"><img src="../images/flecha.png" alt="enviar"/></button>
+            <textarea id="message-text" placeholder="..."></textarea>
         </form>
+        <div id="pregunta-div">
+          <input type="text" id="pregunta-input" placeholder="Pregunta aqui" />
+          <button type="submit" class="button-send">
+            <img src="../images/flecha.png" alt="enviar" />
+          </button>
+        </div>
     </div>
-  </div>
+</div>
  `
-    itemChat.setAttribute("id", "chat");
+  itemChat.setAttribute("id", "chat");
 
-    return itemChat;
+  return itemChat;
 
 };

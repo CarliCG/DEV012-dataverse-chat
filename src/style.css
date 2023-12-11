@@ -14,7 +14,7 @@ html {
 }
 
 h1 {
-  
+
   margin-left: auto;
   margin-right: auto;
   font-size: 30px;
@@ -49,7 +49,7 @@ h1 {
   /* 100% del ancho de la ventana */
   margin-bottom: 20px;
   box-shadow: inset 0 4px 8px rgba(141, 85, 85, 0.1);
-  
+
 }
 
 
@@ -70,25 +70,30 @@ label[for="sort-select"] {
   width: 150px;
   height: 50px;
 }
+
 /* Estilo para el contenedor type-select */
 #type-select,
 #temporality-select,
 #sort-select {
-  width: 200px; /* Ajusta el valor según tus preferencias */
-  padding: 10px; /* Añade espacio alrededor del contenedor */
-  font-size: 14px; /* Ajusta el tamaño de la fuente dentro del contenedor */
+  width: 200px;
+  /* Ajusta el valor según tus preferencias */
+  padding: 10px;
+  /* Añade espacio alrededor del contenedor */
+  font-size: 14px;
+  /* Ajusta el tamaño de la fuente dentro del contenedor */
 }
 
 /* Estilo para los elementos dentro de type-select */
 #type-select option {
-  font-size: 14px; /* Ajusta el tamaño de la fuente de las opciones */
+  font-size: 14px;
+  /* Ajusta el tamaño de la fuente de las opciones */
 }
 
 /* Puedes experimentar con estos valores para obtener el tamaño deseado */
 
 body {
-
-  background-color: rgb(235, 226, 226);
+  /*rgba(70, 209, 222, 0.725);*/
+  background-color: #ccc;
   filter: brightness(0.9);
   /* Ajusta el valor según tus preferencias */
   font-family: 'Fira Sans', sans-serif;
@@ -99,13 +104,17 @@ body {
 .card {
   background-color: rgba(215, 112, 112, 0.451);
   border: 3px solid black;
-  max-width: 400px; /* Establecer el ancho máximo deseado */
-  width: 100%; /* Hacer que la tarjeta ocupe el ancho completo del contenedor padre */
-  box-sizing: border-box; /* Incluir el borde en el ancho total */
-  
+  max-width: 400px;
+  /* Establecer el ancho máximo deseado */
+  width: 100%;
+  /* Hacer que la tarjeta ocupe el ancho completo del contenedor padre */
+  box-sizing: border-box;
+  /* Incluir el borde en el ancho total */
+
   /* Agregar media queries para hacer la tarjeta responsive en diferentes tamaños de pantalla */
   @media (max-width: 767px) {
-    max-width: 100%; /* En pantallas más pequeñas, la tarjeta ocupa el ancho completo */
+    max-width: 100%;
+    /* En pantallas más pequeñas, la tarjeta ocupa el ancho completo */
   }
 }
 
@@ -162,18 +171,99 @@ li {
   margin-bottom: 10px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+
 button {
-  font-size: 18px; /* Tamaño de la letra más grande */
-  cursor: pointer; /* Cambiar el cursor al pasar encima */
+  font-size: 18px;
+  /* Tamaño de la letra más grande */
+  cursor: pointer;
+  /* Cambiar el cursor al pasar encima */
+
+}
+
+/* Modificaion Chat View */
+#personajes {
+  float: left;
+  width: 200px;
+  text-align: center;
+}
+#chatIn {
+  padding: 100px 200px; /* Agrega un margen de 20px alrededor del contenido del #chatIn */
+}
+#chatIn-container {
+  display: flex;
+  flex-direction: column;
   
 }
-.footer-content img {
-  width: 50px;
-  /* Ajusta según sea necesario */
-  height: auto;
-  /* Mantiene la proporción original */
-  margin-right: 10px;
-  /* Espacio entre el logo y el texto */
+
+#messages {
+  margin-bottom: 10px;
+}
+
+#message-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto; /* Centra el formulario horizontalmente en el contenedor */
+  width: 100%; /* Establece un ancho del 100% del contenedor */
+}
+
+#message-text {
+  width: 100%;
+  padding: 10px;
+}
+
+.button-send {
+  padding: 5px 10px;
+  background-color: #ff000081;
+  border-radius: 5px;
+  cursor: pointer;
+  max-width: 80px;
+  margin-top: 10px;
+  margin-left: 10px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.button-send img {
+  height: 20px;
+  width: 20px;
+}
+
+#pregunta-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#pregunta-input {
+  width: 100%;
+  padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  #personajes {
+    float: none;
+    width: auto;
+  }
+
+  #chatIn-container {
+    align-items: center;
+  }
+
+  .button-send {
+    max-width: none;
+  }
+
+  #pregunta-div {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #pregunta-input {
+    width: 70%;
+  }
 }
 
 footer {
@@ -191,6 +281,14 @@ footer {
 }
 
 
+.footer-content img {
+  width: 50px;
+  /* Ajusta según sea necesario */
+  height: auto;
+  /* Mantiene la proporción original */
+  margin-right: 10px;
+  /* Espacio entre el logo y el texto */
+}
 
 .img-error {
   max-width: 50%;
