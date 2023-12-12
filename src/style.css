@@ -27,7 +27,7 @@ h1 {
   border: 1px solid #000;
   border-radius: 20px;
   padding: 8px;
-  background-color: rgba(133, 134, 199, 0.778);
+  background-color: rgba(1, 4, 148, 0.778);
   margin-top: 10px;
   margin-bottom: 20px;
 
@@ -41,7 +41,7 @@ h1 {
 }
 
 .contenedor {
-  background-color: rgba(246, 242, 242, 0.614);
+  background-color: rgba(246, 242, 242, 0.972);
   padding: 10px 20px;
   display: flex;
   /* Ajustar el contenedor al ancho completo */
@@ -65,7 +65,7 @@ label[for="sort-select"] {
 
 #button-clear {
   margin-right: 10px;
-  background-color: rgba(246, 16, 16, 0.27);
+  background-color: rgb(145, 205, 205);
   font-weight: bold;
   width: 150px;
   height: 50px;
@@ -92,17 +92,13 @@ label[for="sort-select"] {
 /* Puedes experimentar con estos valores para obtener el tamaño deseado */
 
 body {
-  /*rgba(70, 209, 222, 0.725);*/
-  background-color: #ccc;
-  filter: brightness(0.9);
-  /* Ajusta el valor según tus preferencias */
-  font-family: 'Fira Sans', sans-serif;
-  font-weight: 400;
-
+  background-image: url(images/fondo.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
-
 .card {
-  background-color: rgba(215, 112, 112, 0.451);
+  background-color: rgb(145, 205, 205);
   border: 3px solid black;
   max-width: 400px;
   /* Establecer el ancho máximo deseado */
@@ -110,7 +106,7 @@ body {
   /* Hacer que la tarjeta ocupe el ancho completo del contenedor padre */
   box-sizing: border-box;
   /* Incluir el borde en el ancho total */
-
+  cursor: pointer;
   /* Agregar media queries para hacer la tarjeta responsive en diferentes tamaños de pantalla */
   @media (max-width: 767px) {
     max-width: 100%;
@@ -134,15 +130,16 @@ body {
 /* Estilo para los términos y definiciones en la tarjeta */
 .card dt {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 25px;
   margin-top: 5px;
   color: #120101;
 }
 
 .card dd {
   margin: 10px 10px;
-  color: #0c0a0a;
-  font-weight: 500;
+  color: #544a4a;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 ul {
@@ -155,9 +152,9 @@ ul {
 }
 
 ul li:hover {
-  background-color: rgba(116, 98, 151, 0.5);
-  transition: background-color 0.3s;
-  /* Agrega una transición suave */
+  background-color: rgb(116, 133, 221);
+  transition: background-color 0.3s;  /* Agrega una transición suave */
+   
 }
 
 li {
@@ -181,18 +178,41 @@ button {
 }
 
 /* Modificaion Chat View */
+#chat {
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 600px;
+  padding: 80px;
+  margin-top: 100px;
+}
+
 #personajes {
-  float: left;
-  width: 200px;
   text-align: center;
 }
-#chatIn {
-  padding: 100px 200px; /* Agrega un margen de 20px alrededor del contenido del #chatIn */
+
+#personajes h3 {
+  margin-top: 10px;
+  font-size: 30px;
 }
-#chatIn-container {
-  display: flex;
-  flex-direction: column;
+
+#personajes img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+#chatIn {
+  margin-top: 20px;
   
+}
+
+#chatIn-container {
+  position: relative;
 }
 
 #messages {
@@ -201,33 +221,41 @@ button {
 
 #message-form {
   display: flex;
-  flex-direction: column;
-  margin: 0 auto; /* Centra el formulario horizontalmente en el contenedor */
-  width: 100%; /* Establece un ancho del 100% del contenedor */
+  margin-bottom: 10px;
 }
 
 #message-text {
-  width: 100%;
-  padding: 10px;
+  flex-grow: 1;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid black;
+  font-size: 15px;
+}
+
+#pregunta-div {
+  display: flex;
+  align-items: center;
+}
+
+#pregunta-input {
+  flex-grow: 1;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid black;
+  font-size: 15px;
 }
 
 .button-send {
-  padding: 5px 10px;
-  background-color: #ff000081;
-  border-radius: 5px;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
-  max-width: 80px;
-  margin-top: 10px;
-  margin-left: 10px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .button-send img {
-  height: 20px;
   width: 20px;
+  height: 20px;
 }
+
 
 #pregunta-div {
   display: flex;
@@ -265,11 +293,59 @@ button {
     width: 70%;
   }
 }
+/* Modificaion ApiKey View */
+
+#api {
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+#api h3 {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+#password-text {
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+#ingresar {
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  #Container-Password {
+      flex-direction: row;
+      align-items: center;
+  }
+
+  #password {
+      margin-right: 20px;
+      margin-bottom: 0;
+  }
+}
+/* Modificaion Footer */
 
 footer {
 
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.597);
+  background-color: rgba(255, 255, 255, 0.886);
   /* Fondo blanco transparente */
   padding: 10px;
   /* Ajusta según sea necesario */
@@ -295,9 +371,7 @@ footer {
   height: auto;
   display: block;
   margin: auto;
-  filter: brightness(1.1);
-  opacity: 0.9;
-  border-radius: 40px;
+  border-radius: 20px;
 
 
 }
