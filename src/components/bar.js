@@ -1,5 +1,5 @@
 export const createBar = (funcionRenderizar) => {
-    const htmlTemplate = `
+  const htmlTemplate = `
       <div class="contenedor">
         <button data-testid="button-clear" id="button-clear">Limpiar filtro</button>
         <form>
@@ -26,32 +26,38 @@ export const createBar = (funcionRenderizar) => {
             <option value="desc">Z - A</option>
           </select>
         </form>
+        <button data-testid="button-apikey" id="button-apikey">ApiKey</button>
       </div>
       <div id="stats-container" class="statistics-container">
         <p></p>
       </div>
     `;
-  
-    const barra = document.createElement('div');
-    barra.classList.add('barra');
-    barra.innerHTML = htmlTemplate;
-  
-    const button = barra.querySelector("[data-testid='button-clear']");
-    button.addEventListener("click", function () {
-      funcionRenderizar("", "", "none");
-    });
-  
-    const selectType = barra.querySelector("[data-testid='filter-type']");
-    const selectTemporality = barra.querySelector("[data-testid='filter-temporality']");
-    const selectSort = barra.querySelector("[data-testid='select-sort']");
-  
-    selectType.addEventListener("change", updateFilters);
-    selectTemporality.addEventListener("change", updateFilters);
-    selectSort.addEventListener("change", updateFilters);
-  
-    function updateFilters() {
-      funcionRenderizar(selectType.value, selectTemporality.value, selectSort.value);
-    }
-  
-    return barra;
-  };
+
+  const barra = document.createElement('div');
+  barra.classList.add('barra');
+  barra.innerHTML = htmlTemplate;
+
+  const button = barra.querySelector("[data-testid='button-clear']");
+  button.addEventListener("click", function () {
+    funcionRenderizar("", "", "none");
+  });
+
+  const selectType = barra.querySelector("[data-testid='filter-type']");
+  const selectTemporality = barra.querySelector("[data-testid='filter-temporality']");
+  const selectSort = barra.querySelector("[data-testid='select-sort']");
+
+  selectType.addEventListener("change", updateFilters);
+  selectTemporality.addEventListener("change", updateFilters);
+  selectSort.addEventListener("change", updateFilters);
+
+  function updateFilters() {
+    funcionRenderizar(selectType.value, selectTemporality.value, selectSort.value);
+  }
+  const buttonApiKey = barra.querySelector("[data-testid='button-apikey']");
+  buttonApiKey.addEventListener("click", function () {
+    navigateTo("/apikey");
+  });
+
+
+  return barra;
+};

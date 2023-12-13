@@ -27,12 +27,10 @@ export const renderItems = (data) => {
 
       // Agregar evento de clic a itemList
       itemList.addEventListener("click", () => {
-        navigateTo("/chat");
+        navigateTo("/chat", element.name, element.imageUrl);
       });
     });
 
     return list;
   }
 };
-
- 

@@ -1,8 +1,8 @@
 html {
   box-sizing: border-box;
   font-family: sans-serif;
-  font-size: 16px;
-  margin-left: 20px;
+  font-size: 1vw; /* Utiliza vw (viewport width) en lugar de un valor fijo */
+  margin: 0 1vw; /* Utiliza vw en lugar de píxeles para los márgenes */
 }
 
 /* Estilos para el encabezado */
@@ -10,27 +10,26 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
+  padding: 1vw; /* Utiliza vw en lugar de píxeles para el padding */
+  margin-bottom: 2vw; /* Utiliza vw en lugar de píxeles para el margen */
 }
 
 h1 {
-
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 30px;
+  margin: 0 auto; /* Corregido el margen izquierdo y derecho */
+  font-size: 3vw; /* Utiliza vw en lugar de un valor fijo */
   font-weight: 700;
-  padding-right: 30px;
+  padding-right: 2vw; /* Utiliza vw en lugar de píxeles para el padding */
+  
 }
-
+/* Estilo Estadisticas */
 .statistics-container {
   display: flex;
   border: 1px solid #000;
   border-radius: 20px;
   padding: 8px;
-  background-color: rgba(1, 4, 148, 0.778);
+  background-color: rgba(10, 79, 119, 0.255);
   margin-top: 10px;
   margin-bottom: 20px;
-
 
 }
 
@@ -38,99 +37,111 @@ h1 {
 .statistics-container p {
   font-size: 18px;
   text-align: left;
-}
 
+}
+/* Estilo para la Barra */
 .contenedor {
   background-color: rgba(246, 242, 242, 0.972);
-  padding: 10px 20px;
+  padding: 10px 10px;
   display: flex;
-  /* Ajustar el contenedor al ancho completo */
-  width: 100vw;
-  /* 100% del ancho de la ventana */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan cuando no hay suficiente espacio */
+  align-items: center; /* Centra verticalmente los elementos */
+  width: 100%;
   margin-bottom: 20px;
-  box-shadow: inset 0 4px 8px rgba(141, 85, 85, 0.1);
-
+  justify-content: space-around;
 }
-
 
 label[for="type-select"],
 label[for="temporality-select"],
 label[for="sort-select"] {
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 5px;
+  margin-left: px;
   color: black;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 14px;
+  
 }
 
 #button-clear {
+  
   margin-right: 10px;
-  background-color: rgb(145, 205, 205);
+  background-color: rgba(188, 228, 228, 0.976);
   font-weight: bold;
-  width: 150px;
-  height: 50px;
+  font-size: 14px;
+  width: 100px;
+  height: 40px;
+  border: 2px solid rgb(145, 144, 144);
+  border-radius: 10px;
+  cursor: pointer;
 }
-
-/* Estilo para el contenedor type-select */
+form{
+  flex:1;
+  display:flex;
+  align-items: center;
+  margin-right: 20px;
+}
 #type-select,
 #temporality-select,
 #sort-select {
-  width: 200px;
-  /* Ajusta el valor según tus preferencias */
-  padding: 10px;
-  /* Añade espacio alrededor del contenedor */
-  font-size: 14px;
-  /* Ajusta el tamaño de la fuente dentro del contenedor */
+  flex: 3; /* Ocupa el doble de espacio que las etiquetas */
+  padding: 8px;
+  margin-right: 10px;
+  font-size: 12px;
 }
 
-/* Estilo para los elementos dentro de type-select */
 #type-select option {
   font-size: 14px;
-  /* Ajusta el tamaño de la fuente de las opciones */
 }
+@media (max-width: 600px) {
+  .contenedor {
+    flex-direction: column; /* Cambia la dirección de los elementos a vertical */
+    align-items: stretch; /* Estira los elementos verticalmente */
+  }
 
+  label[for="type-select"],
+  label[for="temporality-select"],
+  label[for="sort-select"] {
+    margin-bottom: 10px;
+  }
+
+  #button-clear {
+    width: 100%; /* Ocupa todo el ancho disponible */
+  }
+}
 /* Puedes experimentar con estos valores para obtener el tamaño deseado */
 
 body {
   background-image: url(images/fondo.jpeg);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  
 }
+
 .card {
-  background-color: rgb(145, 205, 205);
-  border: 3px solid black;
+  background-color: rgba(188, 228, 228, 0.976);
+  border: 2px solid rgb(145, 144, 144);
   max-width: 400px;
-  /* Establecer el ancho máximo deseado */
   width: 100%;
-  /* Hacer que la tarjeta ocupe el ancho completo del contenedor padre */
   box-sizing: border-box;
-  /* Incluir el borde en el ancho total */
   cursor: pointer;
-  /* Agregar media queries para hacer la tarjeta responsive en diferentes tamaños de pantalla */
-  @media (max-width: 767px) {
-    max-width: 100%;
-    /* En pantallas más pequeñas, la tarjeta ocupa el ancho completo */
-  }
 }
 
 /* Estilo para la imagen de la película */
 .card img {
-  width: 300px;
-  /* Establece un ancho fijo para todas las imágenes */
-  height: 400px;
-  /* Mantiene la proporción de aspecto original */
+  width: 15vw;
+  height: 20vw;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
   margin-bottom: 10px;
-
 }
 
 /* Estilo para los términos y definiciones en la tarjeta */
 .card dt {
   font-weight: bold;
-  font-size: 25px;
+  font-size: 15px;
   margin-top: 5px;
   color: #120101;
 }
@@ -139,7 +150,7 @@ body {
   margin: 10px 10px;
   color: #544a4a;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 ul {
@@ -153,15 +164,12 @@ ul {
 
 ul li:hover {
   background-color: rgb(116, 133, 221);
-  transition: background-color 0.3s;  /* Agrega una transición suave */
-   
+  transition: background-color 0.3s;
 }
 
 li {
   background: white;
-  /* Fondo transparente */
   border-radius: 10px;
-  /* Bordes redondeados, ajusta según tus preferencias */
   padding: 20px;
   flex: 1;
   margin-right: 10px;
@@ -169,14 +177,30 @@ li {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-button {
-  font-size: 18px;
-  /* Tamaño de la letra más grande */
-  cursor: pointer;
-  /* Cambiar el cursor al pasar encima */
+/* Agrega media queries para hacer la tarjeta responsive en diferentes tamaños de pantalla */
+@media (max-width: 767px) {
+  .card {
+    max-width: 100%;
+  }
 
+  /* Puedes ajustar los estilos de los elementos en dispositivos más pequeños según tus necesidades */
+  .card dt {
+    font-size: 13px;
+  }
+
+  .card dd {
+    font-size: 13px;
+  }
+
+  .card img {
+    width: 200px;
+  }
+
+  li {
+    flex: 1 0 calc(50% - 10px);
+    margin-right: 0;
+  }
 }
-
 /* Modificaion Chat View */
 #chat {
   background-color: white;
@@ -186,7 +210,7 @@ button {
   width: 80%;
   max-width: 600px;
   padding: 80px;
-  margin-top: 100px;
+  margin-top: 120px;
 }
 
 #personajes {
@@ -222,6 +246,7 @@ button {
 #message-form {
   display: flex;
   margin-bottom: 10px;
+ 
 }
 
 #message-text {
