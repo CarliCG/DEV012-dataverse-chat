@@ -1,3 +1,5 @@
+import { navigateTo } from "../router.js";
+
 export const renderItems = (data) => {
   if (Array.isArray(data)) {
     const list = document.createElement("ul");
@@ -25,7 +27,7 @@ export const renderItems = (data) => {
 
       // Agregar evento de clic a itemList
       itemList.addEventListener("click", () => {
-        redirigirChat(element.id);
+        navigateTo("/chat");
       });
     });
 
@@ -33,6 +35,4 @@ export const renderItems = (data) => {
   }
 };
 
-const redirigirChat = (id) => {
-  window.location.href = `../src/views/chat.js?id=${id}`;
-};
+ 

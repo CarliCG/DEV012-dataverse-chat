@@ -17,7 +17,7 @@ const routes = {
 }
 
 const viewContainer = document.getElementById("root");
-setRoutes(routes); //Toma el obejot se lo lleva al router y lo define
+setRoutes(routes); //Toma el objeto se lo lleva al router y lo define
 setRootElement(viewContainer);
 
 document.addEventListener('DOMContentLoaded', (event) => { //DOMContentLoaded cuando todo html fue interpretado y ejecutado
@@ -25,5 +25,7 @@ document.addEventListener('DOMContentLoaded', (event) => { //DOMContentLoaded cu
     onURLChange(event.currentTarget.location.pathname)
 });
 
-window.onpopstate=onURLChange
+window.onpopstate = (event) => {
+    onURLChange(event.currentTarget.location.pathname, event); 
+}
 

@@ -1,44 +1,41 @@
 let ROUTES = {}; // Guarda/mapea las rutas del sitio
 let rootElement = ""; // Referencia del objeto HTML donde se pintará el contenido que se esté generando
 
+//Asignar un objeto HTML a la variable rootElement.
 export const setRootElement = (newRootElementValue) => {
-    // validar si newRootElementValue es un objeto html
-    rootElement = newRootElementValue;
-
+    rootElement = newRootElementValue; // validar si newRootElementValue es un objeto html
 }
 
+//configurar las rutas de la aplicación.
 export const setRoutes = (newRoutesvalue) => {
-    if (typeof newRoutesvalue === 'object') {
+    if (typeof newRoutesvalue === 'object') { //Verifica si el tipo de newRoutesvalue es un objeto, se espera que las rutas sean proporcionadas en forma de un objeto.
         if (newRoutesvalue['/error']) {
             ROUTES = newRoutesvalue;
         }
     }
 }
 
-export const renderView = (pathname = {}) => {
-    // clear the root element
-    const root = rootElement;
-    root.innerHTML = '';
-    // find the correct view in ROUTES for the pathname
-    if (ROUTES[pathname]) {
-        const template = ROUTES[pathname]();
-        root.appendChild(template);
-    } else {
-        root.appendChild(ROUTES['/error']());
-        // in case not found render the error view
-        // render the correct view passing the value of props
-        // add the view element to the DOM root element
+//se encarga de renderizar vistas en una aplicación web según la ruta proporcionada
+export const renderView = (pathname,props) => {
+    const root = rootElement;// servirá como el contenedor principal para las vistas.
+    root.innerHTML = ''; // clear the root element.
+    if (ROUTES[pathname]) { // Verifica si existe una ruta correspondiente en el objeto ROUTES para la ruta proporcionada (pathname).
+        const template = ROUTES[pathname](props); //Si la ruta existe en ROUTES, se llama a la función asociada con esa ruta, pasando las propiedades props. El resultado se almacena en una variable llamada template.
+        root.appendChild(template); //Agrega el elemento resultante (template) al elemento root, efectivamente renderizando la vista.
+    } else { //Si la ruta no se encuentra en ROUTES, se ejecuta este bloque.
+        root.appendChild(ROUTES['/error']()); //Renderiza la vista de error obtenida desde ROUTES['/error']() y la agrega al elemento root.        
     }
 }
 
-export const navigateTo = (pathname = {}) => {
+//cambiar la ruta en la barra de direcciones del navegador, actualizar el historial de navegación y renderizar una vista asociada a la nueva ruta. 
+export const navigateTo = (pathname,props) => {
     // update window history with pushState
-    const URLvisited = window.location.hostname + pathname
-    history.pushState({}, '', URLvisited);
-    // render the view with the pathname and props
-    renderView(pathname);
+    const URLvisited = window.location.hostname + pathname //Crea una nueva URL combinando el hostname actual (window.location.hostname) con la ruta proporcionada (pathname). Esto forma la nueva URL que se visitará.
+    history.pushState({}, '', URLvisited); //cambia la URL en la barra de direcciones del navegador sin recargar la página.
+    // renderiza pathname and props
+    renderView(pathname,props);
 }
 
-export const onURLChange = (location) => {
-    renderView(location);
+export const onURLChange = (location, props) => {
+    renderView(location, props);
 }
