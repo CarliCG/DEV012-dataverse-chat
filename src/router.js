@@ -27,14 +27,14 @@ export const renderView = (pathname,props) => {
     }
 }
 
-//cambiar la ruta en la barra de direcciones del navegador, actualizar el historial de navegación y renderizar una vista asociada a la nueva ruta. 
-export const navigateTo = (pathname,props) => {
+// cambiar la ruta en la barra de direcciones del navegador, actualizar el historial de navegación y renderizar una vista asociada a la nueva ruta.
+export const navigateTo = (pathname, props) => {
     // update window history with pushState
-    const URLvisited = window.location.hostname + pathname //Crea una nueva URL combinando el hostname actual (window.location.hostname) con la ruta proporcionada (pathname). Esto forma la nueva URL que se visitará.
-    history.pushState({}, '', URLvisited); //cambia la URL en la barra de direcciones del navegador sin recargar la página.
+    const URLvisited = window.location.origin + pathname; // Utilizar window.location.origin en lugar de window.location.hostname
+    history.pushState({}, '', URLvisited);
     // renderiza pathname and props
-    renderView(pathname,props);
-}
+    renderView(pathname, props);
+  }
 
 export const onURLChange = (location, props) => {
     renderView(location, props);

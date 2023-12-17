@@ -1,3 +1,5 @@
+import { navigateTo } from "../router.js";
+
 export const createBar = (funcionRenderizar) => {
   const htmlTemplate = `
       <div class="contenedor">
@@ -28,15 +30,14 @@ export const createBar = (funcionRenderizar) => {
         </form>
         <button data-testid="button-apikey" id="button-apikey">ApiKey</button>
       </div>
-      <div id="stats-container" class="statistics-container">
-        <p></p>
-      </div>
+      
     `;
 
   const barra = document.createElement('div');
   barra.classList.add('barra');
   barra.innerHTML = htmlTemplate;
 
+  //Funcion de boton borrar
   const button = barra.querySelector("[data-testid='button-clear']");
   button.addEventListener("click", function () {
     funcionRenderizar("", "", "none");
@@ -53,11 +54,10 @@ export const createBar = (funcionRenderizar) => {
   function updateFilters() {
     funcionRenderizar(selectType.value, selectTemporality.value, selectSort.value);
   }
+  //Funcion de boton ApiKey
   const buttonApiKey = barra.querySelector("[data-testid='button-apikey']");
   buttonApiKey.addEventListener("click", function () {
     navigateTo("/apikey");
   });
-
-
   return barra;
 };

@@ -17,20 +17,34 @@ export const renderItems = (data) => {
         <dt>Categoría:</dt><dd itemprop="type">${element.type}</dd>
         <dt>Descripción:</dt><dd itemprop="description">${element.shortDescription}</dd>
         <dt>Fecha de Estreno:</dt><dd itemprop="releaseDate">${element.facts.releaseDate}</dd>
-      `;
+        <dt>Presupuesto:</dt><dd itemprop="budget">${element.facts.budget}</dd>
+        `;
 
       itemContainer.setAttribute("itemscope", "");
       itemContainer.setAttribute("itemtype", "películas");
 
-      list.appendChild(itemList);
       itemList.appendChild(itemContainer);
 
       // Agregar evento de clic a itemList
       itemList.addEventListener("click", () => {
         navigateTo("/chat", element.name, element.imageUrl);
       });
+
+      list.appendChild(itemList);
     });
 
     return list;
   }
+};
+
+export const calculateAverageBudget = (data) => {
+  if (Array.isArray(data) && data.length > 0) {
+    const totalBudget = data.reduce((sum, movie) => {
+      const budget = parseFloat(movie.facts.budget.replace(/[^0-9.-]+/g,"")); // Convertir la cadena a número
+      return sum + budget;
+    }, 0);
+    const averageBudget = totalBudget / data.length;
+    return averageBudget.toFixed(2);
+  }
+  return 0;
 };

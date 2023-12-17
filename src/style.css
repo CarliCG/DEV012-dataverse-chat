@@ -49,6 +49,9 @@ h1 {
   width: 100%;
   margin-bottom: 20px;
   justify-content: space-around;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 label[for="type-select"],
@@ -71,7 +74,7 @@ label[for="sort-select"] {
   width: 100px;
   height: 40px;
   border: 2px solid rgb(145, 144, 144);
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
 }
 form{
@@ -87,6 +90,7 @@ form{
   padding: 8px;
   margin-right: 10px;
   font-size: 12px;
+  border-radius: 5px;
 }
 
 #type-select option {
@@ -317,6 +321,20 @@ li {
   #pregunta-input {
     width: 70%;
   }
+}
+/* Contenedor del presupuesto */
+.average-budget {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 /* Modificaion ApiKey View */
 
