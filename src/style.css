@@ -254,6 +254,7 @@ li {
 }
 
 #message-text {
+  height: 200px;
   flex-grow: 1;
   border-radius: 5px;
   padding: 5px;
