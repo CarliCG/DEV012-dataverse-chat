@@ -1,3 +1,5 @@
+
+
 export const ChatView = (name, imageUrl) => {
   const itemChat = document.createElement("section");
   itemChat.classList.add("chat-container");
@@ -54,5 +56,14 @@ export const ChatView = (name, imageUrl) => {
     }
   });
 
+  sendButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    const inputValue = preguntaInput.value;
+    if (inputValue.trim() !== "") { // Verificar que el contenido no sea vacío
+      messageText.value += inputValue + '\n'; // Agregar el nuevo mensaje al text area
+      preguntaInput.value = ""; // Limpiar input
+    }
+  });
   return itemChat;
 };
+
