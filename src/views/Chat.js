@@ -1,5 +1,4 @@
-
-
+import { chatCompletions } from "../lib/API.js";
 export const ChatView = (name, imageUrl) => {
   const itemChat = document.createElement("section");
   itemChat.classList.add("chat-container");
@@ -62,8 +61,22 @@ export const ChatView = (name, imageUrl) => {
     if (inputValue.trim() !== "") { // Verificar que el contenido no sea vacío
       messageText.value += inputValue + '\n'; // Agregar el nuevo mensaje al text area
       preguntaInput.value = ""; // Limpiar input
+      chatCompletions(localStorage.getItem("clave"),inputValue,name)
+        .then((response) => {
+          if (!response.choices) {
+            alert('error');
+            return;
+          }
+          console.log(response)
+          // Hacer algo con la respuesta de la API
+        })
+        .catch((error) => {
+          console.error(error);
+          alert('Error Parseo ');
+        
+        });
     }
   });
+
   return itemChat;
 };
-
