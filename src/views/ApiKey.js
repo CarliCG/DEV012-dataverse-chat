@@ -3,12 +3,15 @@ export const Api = () => {
   itemApi.classList.add("api-container");
 
   itemApi.innerHTML = `
-    <div>
-      <h3>Ingresa tu Clave</h3>
-      <input id="password-text" placeholder="..."></input>
-      <button id="ingresar-button">Ingresar</button>
-    </div>
-  `;
+  <div>
+    <h3>Ingresa tu Clave</h3>
+    <input id="password-text" placeholder="..."></input>
+    <button id="ingresar-button">Ingresar</button>
+  </div>
+  <div class="img-container">
+    <img src="../images/clave.jpeg" alt="claveApi" />
+  </div>
+`;
 
   itemApi.setAttribute("id", "api");
 

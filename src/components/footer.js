@@ -7,7 +7,7 @@ export const createFooter = () => {
 
           <p>Desarrollado por: Carla Campaña</p>
 
-          <p>© 2023 - Todos los derechos reservados</p>
+          <p>© 2023 </p>
 
       </div>
   `;

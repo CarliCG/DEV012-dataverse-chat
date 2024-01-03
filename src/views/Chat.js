@@ -6,7 +6,8 @@ export const ChatView = ({name, imageUrl}) => {
 
   itemChat.innerHTML = `
     <div id="personajes">
-      <h3>Chatea con ${name}</h3>
+      <h3>Chatea con </h3>
+      <h3>${name}</h3>
       <img id="personaje-image" src="${imageUrl}" alt="${name}" />
     </div>
 
@@ -68,11 +69,12 @@ export const ChatView = ({name, imageUrl}) => {
             alert('error');
             return;
           }
+          //mostrar el historial de mensajes en un chat.
+          //almacena el contenido del mensaje de la primera opción de respuesta dentro del objeto response
           const respuesta = response.choices[0].message.content;
           messageText.value += respuesta + '\n';
         })
         .catch(() => {
-          
           alert('Error Parseo ');
         });
     }

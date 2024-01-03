@@ -1,8 +1,10 @@
 html {
   box-sizing: border-box;
   font-family: sans-serif;
-  font-size: 1vw; /* Utiliza vw (viewport width) en lugar de un valor fijo */
-  margin: 0 1vw; /* Utiliza vw en lugar de píxeles para los márgenes */
+  font-size: 1vw;
+  /* Utiliza vw (viewport width) en lugar de un valor fijo */
+  margin: 0 1vw;
+  /* Utiliza vw en lugar de píxeles para los márgenes */
 }
 
 /* Estilos para el encabezado */
@@ -10,17 +12,23 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1vw; /* Utiliza vw en lugar de píxeles para el padding */
-  margin-bottom: 2vw; /* Utiliza vw en lugar de píxeles para el margen */
+  padding: 1vw;
+  /* Utiliza vw en lugar de píxeles para el padding */
+  margin-bottom: 2vw;
+  /* Utiliza vw en lugar de píxeles para el margen */
 }
 
 h1 {
-  margin: 0 auto; /* Corregido el margen izquierdo y derecho */
-  font-size: 3vw; /* Utiliza vw en lugar de un valor fijo */
+  margin: 0 auto;
+  /* Corregido el margen izquierdo y derecho */
+  font-size: 3vw;
+  /* Utiliza vw en lugar de un valor fijo */
   font-weight: 700;
-  padding-right: 2vw; /* Utiliza vw en lugar de píxeles para el padding */
-  
+  padding-right: 2vw;
+  /* Utiliza vw en lugar de píxeles para el padding */
+
 }
+
 /* Estilo Estadisticas */
 .statistics-container {
   display: flex;
@@ -39,13 +47,16 @@ h1 {
   text-align: left;
 
 }
+
 /* Estilo para la Barra */
 .contenedor {
   background-color: rgba(246, 242, 242, 0.972);
   padding: 10px 10px;
   display: flex;
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan cuando no hay suficiente espacio */
-  align-items: center; /* Centra verticalmente los elementos */
+  flex-wrap: wrap;
+  /* Permite que los elementos se envuelvan cuando no hay suficiente espacio */
+  align-items: center;
+  /* Centra verticalmente los elementos */
   width: 100%;
   margin-bottom: 20px;
   justify-content: space-around;
@@ -62,11 +73,12 @@ label[for="sort-select"] {
   color: black;
   font-weight: 700;
   font-size: 14px;
-  
+
 }
 
-#button-clear {
-  
+#button-clear, 
+#button-apikey{
+
   margin-right: 10px;
   background-color: rgba(188, 228, 228, 0.976);
   font-weight: bold;
@@ -77,16 +89,19 @@ label[for="sort-select"] {
   border-radius: 5px;
   cursor: pointer;
 }
-form{
-  flex:1;
-  display:flex;
+
+form {
+  flex: 1;
+  display: flex;
   align-items: center;
   margin-right: 20px;
 }
+
 #type-select,
 #temporality-select,
 #sort-select {
-  flex: 3; /* Ocupa el doble de espacio que las etiquetas */
+  flex: 3;
+  /* Ocupa el doble de espacio que las etiquetas */
   padding: 8px;
   margin-right: 10px;
   font-size: 12px;
@@ -96,10 +111,13 @@ form{
 #type-select option {
   font-size: 14px;
 }
+
 @media (max-width: 600px) {
   .contenedor {
-    flex-direction: column; /* Cambia la dirección de los elementos a vertical */
-    align-items: stretch; /* Estira los elementos verticalmente */
+    flex-direction: column;
+    /* Cambia la dirección de los elementos a vertical */
+    align-items: stretch;
+    /* Estira los elementos verticalmente */
   }
 
   label[for="type-select"],
@@ -109,18 +127,19 @@ form{
   }
 
   #button-clear {
-    width: 100%; /* Ocupa todo el ancho disponible */
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
   }
 }
+
 /* Puedes experimentar con estos valores para obtener el tamaño deseado */
 
 body {
-  background-image: url(images/fondo.jpeg);
-  background-position: center;
+  background-image: url(images/fondo.jpg);
+  background-position: center 30%; /* Ajusta la posición vertical */
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  
+  /* Añade más propiedades según sea necesario */
 }
 
 .card {
@@ -205,74 +224,72 @@ li {
     margin-right: 0;
   }
 }
+
 /* Modificaion Chat View */
-#chat {
-  background-color: white;
-  border-radius: 10px;
-  border: 2px solid black;
-  margin: 0 auto;
-  width: 80%;
-  max-width: 600px;
-  padding: 80px;
-  margin-top: 120px;
+/* Estilos generales */
+.chat-container {
+  display: flex;
+  flex-direction: row; /* Cambiado de column a row */
+  align-items: center;
+  margin-left: 350px;
+  margin-top: 80px;
 }
 
 #personajes {
-  text-align: center;
+  display: flex;
+  flex-direction: column; /* Cambiado de row a column */
+  align-items: center;
 }
 
 #personajes h3 {
-  margin-top: 10px;
-  font-size: 30px;
+  margin-bottom: 1px; /* Ajusta el espacio entre el título y la imagen */
+  margin-top: 1px;
+  font-size: 25px;
 }
 
-#personajes img {
-  width: 100px;
-  height: 100px;
+#personaje-image {
+  width: 200px;
+  height: 250px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 10%;
   margin-top: 10px;
-}
-
-#chatIn {
-  margin-top: 20px;
-  
 }
 
 #chatIn-container {
-  position: relative;
-}
-
-#messages {
-  margin-bottom: 10px;
-}
-
-#message-form {
   display: flex;
-  margin-bottom: 10px;
- 
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0; /* Ajusta el espacio entre #personajes y #chatIn */
 }
 
+.message-container {
+  display: flex;
+  flex-direction: column;
+}
 #message-text {
-  height: 200px;
+  height: 400px;
+  width: 300px;
   flex-grow: 1;
   border-radius: 5px;
   padding: 5px;
   border: 1px solid black;
   font-size: 15px;
+  margin-top: 50px;
+  margin-left: 50px;
 }
 
 #pregunta-div {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-right: 80px;
 }
 
 #pregunta-input {
-  flex-grow: 1;
-  border-radius: 5px;
+  width: 200px;
+  margin-left: 1px;
   padding: 5px;
-  border: 1px solid black;
-  font-size: 15px;
 }
 
 .button-send {
@@ -286,18 +303,14 @@ li {
   height: 20px;
 }
 
-
-#pregunta-div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 10px;
+.message {
+  margin-bottom: 8px; /* ajusta el margen según tus necesidades */
+  padding: 8px;
+  border-radius: 4px;
+  word-wrap: break-word;
 }
 
-#pregunta-input {
-  width: 100%;
-  padding: 10px;
-}
+
 
 @media screen and (max-width: 600px) {
   #personajes {
@@ -323,6 +336,7 @@ li {
     width: 70%;
   }
 }
+
 /* Contenedor del presupuesto */
 .average-budget {
   font-size: 15px;
@@ -337,6 +351,7 @@ li {
   border: 1px solid #ccc;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
 /* Modificaion ApiKey View */
 
 #api {
@@ -372,24 +387,40 @@ li {
   padding: 5px 10px;
   cursor: pointer;
 }
+.img-container {
+  /* Agrega los estilos que desees para el contenedor de la imagen */
+  max-width: 200px; /* Establece el ancho máximo del contenedor según tus necesidades */
+  width: 100%; /* Garantiza que el contenedor ocupe el 100% del ancho disponible */
+  margin: 0 auto; /* Centra el contenedor en el medio de su contenedor principal */
+  border-radius: 10px; /* Ejemplo de borde redondeado */
+  overflow: hidden; /* Evitar que la imagen se salga del contenedor */
+}
+
+.img-container img {
+  /* Agrega los estilos que desees para la imagen dentro del contenedor */
+  width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
+  height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+  display: block; /* Elimina el espacio extra debajo de la imagen */
+}
 
 @media only screen and (min-width: 768px) {
   #Container-Password {
-      flex-direction: row;
-      align-items: center;
+    flex-direction: row;
+    align-items: center;
   }
 
   #password {
-      margin-right: 20px;
-      margin-bottom: 0;
+    margin-right: 20px;
+    margin-bottom: 0;
   }
 }
+
 /* Modificaion Footer */
 
 footer {
 
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.886);
+  background-color: rgba(176, 234, 242, 0.356);
   /* Fondo blanco transparente */
   padding: 10px;
   /* Ajusta según sea necesario */
