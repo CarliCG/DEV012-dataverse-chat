@@ -27,7 +27,7 @@ export const renderItems = (data) => {
 
       // Agregar evento de clic a itemList
       itemList.addEventListener("click", () => {
-        navigateTo("/chat", element.name, element.imageUrl);
+        navigateTo("/chat", element);
       });
 
       list.appendChild(itemList);

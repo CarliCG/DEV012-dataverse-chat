@@ -19,7 +19,7 @@ export const Api = () => {
     // Guardar clave en localStorage
     localStorage.setItem("clave", clave);
 
-    console.log("Clave guardada en localStorage:", localStorage.getItem("clave"));
+    //console.log("Clave guardada en localStorage:", localStorage.getItem("clave"));
   };
 
   const ingresarButton = itemApi.querySelector("#ingresar-button");

@@ -10,14 +10,14 @@ export const chatCompletions = (Api, userMessage, movie) => {
       "model": "gpt-3.5-turbo",
       "messages": [
         {
-        "role": "system",
-        "content": `Responde mis preguntas como que fueras la pelicula ${movie}`,
+          "role": "system",
+          "content": `You are ${movie} therefore respond collectively to all questions you can about the movie` ,
         },
         {
-        "role": "user",
-        "content": userMessage
+          "role": "user",
+          "content": userMessage
         }
-    ]
+      ]
 
     }),
   })
@@ -25,8 +25,8 @@ export const chatCompletions = (Api, userMessage, movie) => {
     .then((response) => {
       return response.json();
     })
-    .catch((error) => {
-      console.error(error);
+    .catch(() => {
+      //console.error(error);
       throw new Error('Error al comunicarse con la API');
     });
 };
