@@ -1,6 +1,6 @@
 import { chatCompletions } from "../lib/API.js";
-//Destructurar element y solo pasar los datos de name y imagenURL
-export const ChatView = ({name, imageUrl}) => {
+
+export const ChatView = ({ name, imageUrl }) => {
   const itemChat = document.createElement("section");
   itemChat.classList.add("chat-container");
 
@@ -15,14 +15,16 @@ export const ChatView = ({name, imageUrl}) => {
       <div id="chatIn-container">
         <div id="messages"></div>
         <form id="message-form">
-          <textarea id="message-text" placeholder="..."></textarea>
+          <div class="textarea-container">
+            <textarea id="message-text" placeholder="..."></textarea>
+          </div>
+          <div class="input-container">
+            <input type="text" id="pregunta-input" placeholder="Pregunta aquí" />
+            <button type="submit" class="button-send" id="send-button">
+              <img src="../images/flecha.png" alt="enviar" />
+            </button>
+          </div>
         </form>
-        <div id="pregunta-div">
-          <input type="text" id="pregunta-input" placeholder="Pregunta aquí" />
-          <button type="submit" class="button-send" id="send-button">
-            <img src="../images/flecha.png" alt="enviar" />
-          </button>
-        </div>
       </div>
     </div>
   `;
@@ -33,49 +35,24 @@ export const ChatView = ({name, imageUrl}) => {
   const preguntaInput = itemChat.querySelector("#pregunta-input");
   const messageText = itemChat.querySelector("#message-text");
 
-  // Agregar evento de submit al formulario
   const messageForm = itemChat.querySelector("#message-form");
   messageForm.addEventListener("submit", (event) => {
-    event.preventDefault(); // Evitar recarga de página
-
-    const inputValue = preguntaInput.value;
-    if (inputValue.trim() !== "") { // Verificar que el contenido no sea vacío
-      messageText.value += inputValue + '\n'; // Agregar el nuevo mensaje al text area
-      preguntaInput.value = ""; // Limpiar input
-    }
-  });
-
-  // Enviar la pregunta de input al text area al presionar la tecla enter
-  preguntaInput.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      const inputValue = preguntaInput.value;
-      if (inputValue.trim() !== "") { // Verificar que el contenido no sea vacío
-        messageText.value += inputValue + '\n'; // Agregar el nuevo mensaje al text area
-        preguntaInput.value = ""; // Limpiar input
-      }
-    }
-  });
-
-  sendButton.addEventListener("click", (event) => {
     event.preventDefault();
     const inputValue = preguntaInput.value;
-    if (inputValue.trim() !== "") { // Verificar que el contenido no sea vacío
-      messageText.value += inputValue + '\n'; // Agregar el nuevo mensaje al text area
-      preguntaInput.value = ""; // Limpiar input
+    if (inputValue.trim() !== "") {
+      messageText.value += inputValue + "\n";
+      preguntaInput.value = "";
       chatCompletions(localStorage.getItem("clave"), inputValue, name)
         .then((response) => {
           if (!response.choices) {
-            alert('error');
+            alert("error");
             return;
           }
-          //mostrar el historial de mensajes en un chat.
-          //almacena el contenido del mensaje de la primera opción de respuesta dentro del objeto response
           const respuesta = response.choices[0].message.content;
-          messageText.value += respuesta + '\n';
+          messageText.value += respuesta + "\n";
         })
         .catch(() => {
-          alert('Error Parseo ');
+          alert("Error Parseo ");
         });
     }
   });

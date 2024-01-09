@@ -6,7 +6,9 @@ html {
   margin: 0 1vw;
   /* Utiliza vw en lugar de píxeles para los márgenes */
 }
-
+body {
+  background: linear-gradient(to right, #907cc574, #e0bce755);
+}
 /* Estilos para el encabezado */
 .header-container {
   display: flex;
@@ -51,7 +53,7 @@ h1 {
 /* Estilo para la Barra */
 .contenedor {
   background-color: rgba(246, 242, 242, 0.972);
-  padding: 10px 10px;
+  padding: 10px 1px ;
   display: flex;
   flex-wrap: wrap;
   /* Permite que los elementos se envuelvan cuando no hay suficiente espacio */
@@ -75,9 +77,12 @@ label[for="sort-select"] {
   font-size: 14px;
 
 }
-
-#button-clear, 
-#button-apikey{
+#button-clear{
+  margin-right: 20px;
+  margin-left: 20px;
+}
+#button-clear,
+#button-apikey {
 
   margin-right: 10px;
   background-color: rgba(188, 228, 228, 0.976);
@@ -92,7 +97,6 @@ label[for="sort-select"] {
 
 form {
   flex: 1;
-  display: flex;
   align-items: center;
   margin-right: 20px;
 }
@@ -134,13 +138,7 @@ form {
 
 /* Puedes experimentar con estos valores para obtener el tamaño deseado */
 
-body {
-  background-image: url(images/fondo.jpg);
-  background-position: center 30%; /* Ajusta la posición vertical */
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* Añade más propiedades según sea necesario */
-}
+
 
 .card {
   background-color: rgba(188, 228, 228, 0.976);
@@ -229,7 +227,8 @@ li {
 /* Estilos generales */
 .chat-container {
   display: flex;
-  flex-direction: row; /* Cambiado de column a row */
+  flex-direction: row;
+  /* Cambiado de column a row */
   align-items: center;
   margin-left: 350px;
   margin-top: 80px;
@@ -237,12 +236,14 @@ li {
 
 #personajes {
   display: flex;
-  flex-direction: column; /* Cambiado de row a column */
+  flex-direction: column;
+  /* Cambiado de row a column */
   align-items: center;
 }
 
 #personajes h3 {
-  margin-bottom: 1px; /* Ajusta el espacio entre el título y la imagen */
+  margin-bottom: 1px;
+  /* Ajusta el espacio entre el título y la imagen */
   margin-top: 1px;
   font-size: 25px;
 }
@@ -256,16 +257,17 @@ li {
 }
 
 #chatIn-container {
-  display: flex;
-  flex-direction: column;
+  display: block;
   align-items: flex-end;
-  margin: 0; /* Ajusta el espacio entre #personajes y #chatIn */
+  margin: 0;
+  /* Ajusta el espacio entre #personajes y #chatIn */
 }
 
 .message-container {
   display: flex;
   flex-direction: column;
 }
+
 #message-text {
   height: 400px;
   width: 300px;
@@ -274,7 +276,6 @@ li {
   padding: 5px;
   border: 1px solid black;
   font-size: 15px;
-  margin-top: 50px;
   margin-left: 50px;
 }
 
@@ -288,7 +289,7 @@ li {
 
 #pregunta-input {
   width: 200px;
-  margin-left: 1px;
+  margin-left: 50px;
   padding: 5px;
 }
 
@@ -304,7 +305,8 @@ li {
 }
 
 .message {
-  margin-bottom: 8px; /* ajusta el margen según tus necesidades */
+  margin-bottom: 8px;
+  /* ajusta el margen según tus necesidades */
   padding: 8px;
   border-radius: 4px;
   word-wrap: break-word;
@@ -387,20 +389,29 @@ li {
   padding: 5px 10px;
   cursor: pointer;
 }
+
 .img-container {
   /* Agrega los estilos que desees para el contenedor de la imagen */
-  max-width: 200px; /* Establece el ancho máximo del contenedor según tus necesidades */
-  width: 100%; /* Garantiza que el contenedor ocupe el 100% del ancho disponible */
-  margin: 0 auto; /* Centra el contenedor en el medio de su contenedor principal */
-  border-radius: 10px; /* Ejemplo de borde redondeado */
-  overflow: hidden; /* Evitar que la imagen se salga del contenedor */
+  max-width: 200px;
+  /* Establece el ancho máximo del contenedor según tus necesidades */
+  width: 100%;
+  /* Garantiza que el contenedor ocupe el 100% del ancho disponible */
+  margin: 0 auto;
+  /* Centra el contenedor en el medio de su contenedor principal */
+  border-radius: 10px;
+  /* Ejemplo de borde redondeado */
+  overflow: hidden;
+  /* Evitar que la imagen se salga del contenedor */
 }
 
 .img-container img {
   /* Agrega los estilos que desees para la imagen dentro del contenedor */
-  width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
-  height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
-  display: block; /* Elimina el espacio extra debajo de la imagen */
+  width: 100%;
+  /* La imagen ocupará el 100% del ancho del contenedor */
+  height: auto;
+  /* La altura se ajustará automáticamente para mantener la proporción */
+  display: block;
+  /* Elimina el espacio extra debajo de la imagen */
 }
 
 @media only screen and (min-width: 768px) {

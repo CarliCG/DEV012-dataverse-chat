@@ -38,10 +38,17 @@ export const createBar = (funcionRenderizar) => {
   barra.innerHTML = htmlTemplate;
 
   //Funcion de boton borrar
-  const button = barra.querySelector("[data-testid='button-clear']");
-  button.addEventListener("click", function () {
-    funcionRenderizar("", "", "none");
-  });
+//Funcion de boton borrar
+const button = barra.querySelector("[data-testid='button-clear']");
+button.addEventListener("click", function () {
+  // Restablecer el valor del select a "Elegir una opción" y "Año de estreno"
+  selectType.value = "";
+  selectTemporality.value = "";
+  selectSort.value = "none";
+  funcionRenderizar("", "", "none");
+});
+
+
 
   const selectType = barra.querySelector("[data-testid='filter-type']");
   const selectTemporality = barra.querySelector("[data-testid='filter-temporality']");
